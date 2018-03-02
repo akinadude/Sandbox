@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.List;
 
 import ru.rudedude.sandbox.R;
@@ -16,13 +17,13 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.ViewHolder> {
+public class AppsAdapter extends RecyclerView.Adapter<AppsAdapter.ViewHolder> {
 
     private List<AppInfo> mApplications;
 
     private int mRowLayout;
 
-    public ApplicationAdapter(List<AppInfo> applications, int rowLayout) {
+    public AppsAdapter(List<AppInfo> applications, int rowLayout) {
         mApplications = applications;
         mRowLayout = rowLayout;
     }
@@ -41,20 +42,23 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         notifyItemInserted(position);
     }
 
-    @Override public ViewHolder onCreateViewHolder(final ViewGroup viewGroup, int i) {
+    @Override
+    public ViewHolder onCreateViewHolder(final ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(mRowLayout, viewGroup, false);
         return new ViewHolder(v);
     }
 
-    @Override public void onBindViewHolder(final ViewHolder viewHolder, int i) {
+    @Override
+    public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         final AppInfo appInfo = mApplications.get(i);
         viewHolder.name.setText(appInfo.getName());
         getBitmap(appInfo.getIconPath()).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(viewHolder.image::setImageBitmap);
+                .subscribe(path -> viewHolder.image.setImageBitmap(path));
     }
 
-    @Override public int getItemCount() {
+    @Override
+    public int getItemCount() {
         return mApplications == null ? 0 : mApplications.size();
     }
 
@@ -76,3 +80,4 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         }
     }
 }
+

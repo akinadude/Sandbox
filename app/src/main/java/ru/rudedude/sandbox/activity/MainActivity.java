@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ru.rudedude.sandbox.R;
+import ru.rudedude.sandbox.fragment.AppsFragment;
 import ru.rudedude.sandbox.fragment.ReposFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,9 +19,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ReposFragment reposFragment = new ReposFragment();
+        /*ReposFragment reposFragment = new ReposFragment();
         getFragmentManager().beginTransaction()
-                .add(R.id.fragment_layout, reposFragment , "fragment")
+                .add(R.id.fragment_layout, reposFragment , "reposFragment")
+                .commit();*/
+
+        AppsFragment appsFragment = new AppsFragment();
+        getFragmentManager().beginTransaction()
+                .add(R.id.fragment_layout, appsFragment , "appsFragment")
                 .commit();
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

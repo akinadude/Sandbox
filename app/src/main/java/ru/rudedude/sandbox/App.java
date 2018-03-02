@@ -1,14 +1,15 @@
 package ru.rudedude.sandbox;
 
+
 import android.app.Application;
 import android.content.Context;
+
 import com.alterego.advancedandroidlogger.implementations.DetailedAndroidLogger;
 import com.alterego.advancedandroidlogger.interfaces.IAndroidLogger;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import ru.rudedude.sandbox.R;
 
 public class App extends Application {
 
@@ -16,7 +17,8 @@ public class App extends Application {
 
     public static Context instance;
 
-    @Override public void onCreate() {
+    @Override
+    public void onCreate() {
         super.onCreate();
         instance = this;
 
@@ -35,3 +37,4 @@ public class App extends Application {
         ImageLoader.getInstance().init(config);
     }
 }
+

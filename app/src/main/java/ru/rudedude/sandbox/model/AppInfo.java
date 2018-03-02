@@ -16,6 +16,10 @@ public class AppInfo implements Comparable<AppInfo> {
         return name;
     }
 
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
     public String getIconPath() {
         return iconPath;
     }

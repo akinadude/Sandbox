@@ -32,8 +32,7 @@ public class AppInfoRich implements Comparable<Object> {
         mContext = ctx;
         mResolveInfo = ri;
 
-        mComponentName =
-                new ComponentName(ri.activityInfo.applicationInfo.packageName, ri.activityInfo.name);
+        mComponentName = new ComponentName(ri.activityInfo.applicationInfo.packageName, ri.activityInfo.name);
 
         try {
             pi = ctx.getPackageManager().getPackageInfo(getPackageName(), 0);
