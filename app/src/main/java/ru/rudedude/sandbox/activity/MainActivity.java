@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import ru.rudedude.sandbox.R;
 import ru.rudedude.sandbox.fragment.AppsFragment;
+import ru.rudedude.sandbox.fragment.DownloadFileFragment;
 import ru.rudedude.sandbox.fragment.ReposFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,9 +25,14 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.fragment_layout, reposFragment , "reposFragment")
                 .commit();*/
 
-        AppsFragment appsFragment = new AppsFragment();
+        /*AppsFragment appsFragment = new AppsFragment();
         getFragmentManager().beginTransaction()
                 .add(R.id.fragment_layout, appsFragment , "appsFragment")
+                .commit();*/
+
+        DownloadFileFragment downloadFileFragment = new DownloadFileFragment();
+        getFragmentManager().beginTransaction()
+                .add(R.id.fragment_layout, downloadFileFragment , "downloadFileFragment")
                 .commit();
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
