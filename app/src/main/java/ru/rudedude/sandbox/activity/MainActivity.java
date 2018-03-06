@@ -7,9 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ru.rudedude.sandbox.R;
-import ru.rudedude.sandbox.fragment.AppsFragment;
-import ru.rudedude.sandbox.fragment.DownloadFileFragment;
-import ru.rudedude.sandbox.fragment.ReposFragment;
+import ru.rudedude.sandbox.fragment.SeUsersFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,9 +28,14 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.fragment_layout, appsFragment , "appsFragment")
                 .commit();*/
 
-        DownloadFileFragment downloadFileFragment = new DownloadFileFragment();
+        /*DownloadFileFragment downloadFileFragment = new DownloadFileFragment();
         getFragmentManager().beginTransaction()
                 .add(R.id.fragment_layout, downloadFileFragment , "downloadFileFragment")
+                .commit();*/
+
+        SeUsersFragment seUsersFragment = new SeUsersFragment();
+        getFragmentManager().beginTransaction()
+                .add(R.id.fragment_layout, seUsersFragment , "seUsersFragment")
                 .commit();
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

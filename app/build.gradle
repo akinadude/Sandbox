@@ -50,6 +50,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:1.0.1'
     compile 'io.reactivex:rxjava:1.1.8'
 
     compile 'com.alterego:advancedandroidlogger:1.0.7@aar'

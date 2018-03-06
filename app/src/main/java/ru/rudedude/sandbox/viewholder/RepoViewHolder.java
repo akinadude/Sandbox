@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import ru.rudedude.sandbox.R;
 import ru.rudedude.sandbox.model.GithubRepo;
+import ru.rudedude.sandbox.model.ModelEntry;
 
 public class RepoViewHolder extends BaseViewHolder {
 
@@ -22,7 +23,8 @@ public class RepoViewHolder extends BaseViewHolder {
     }
 
     @Override
-    public void bind(GithubRepo repo) {
+    public void bind(ModelEntry me) {
+        GithubRepo repo = (GithubRepo) me;
         nameTv.setText(repo.name);
         descriptionTv.setText(repo.description);
         languageTv.setText(repo.language);

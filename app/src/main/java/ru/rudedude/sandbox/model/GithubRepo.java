@@ -1,6 +1,6 @@
 package ru.rudedude.sandbox.model;
 
-public class GithubRepo {
+public class GithubRepo implements ModelEntry {
 
     public final int id;
     public final String name;
